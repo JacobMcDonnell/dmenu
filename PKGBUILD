@@ -4,28 +4,28 @@
 # then please put 'unknown'.
 
 # Maintainer: Your Name <youremail@domain.com>
-pkgname=st-jacob-git
-pkgver=0.8.3.r1.1ff86da
+pkgname=dmenu-jacob-git
+pkgver=4.9
 pkgrel=1
-pkgdesc="This Jacob McDonnell's build of st see the repo for more details"
+pkgdesc="This Jacob McDonnell's build of dmenu see the repo for more details"
 arch=(x86_64 i686)
-url="https://gitlab.com/Jacob_McDonnell/st.git"
+url="https://gitlab.com/Jacob_McDonnell/dmenu.git"
 license=('MIT/X Consortium License')
 depends=()
 makedepends=(git make)
-optdepends=(dmenu xurls xclip python-pywal)
-provides=(st)
-conflicts=(st)
+optdepends=(python-pywal)
+provides=(dmenu)
+conflicts=(dmenu)
 source=("git+$url")
 md5sums=('SKIP')
 
 pkgver(){
-	cd st
+	cd dmenu
 	printf "0.8.3.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
-	cd st
+	cd dmenu
 	mkdir -p ${pkgdir}/opt/${pkgname}
 	cp -rf * ${pkgdir}/opt/${pkgname}
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
