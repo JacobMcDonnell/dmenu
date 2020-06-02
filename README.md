@@ -24,7 +24,7 @@ Users of Arch-based distros can install from the AUR, [dmenu-jacob-git](https://
 
 - `pywal` for a dynamic color scheme
 
-- [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/), but libxft-bgra does not install for me
+- [libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra/)
 
 ## How to configure with Xresources
 
